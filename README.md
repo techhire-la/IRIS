@@ -1,8 +1,8 @@
 # DevConnector 2.0
 
-> Social network for developers
+> IRIS
 
-This is a MERN stack application from the "MERN Stack Front To Back" course on [Udemy](https://www.udemy.com/mern-stack-front-to-back/?couponCode=TRAVERSYMEDIA). It is a small social network app that includes authentication, profiles and forum posts.
+An internal referral service to help YPI workers enter in client details and return a list of programs relevant to their needs
 
 ## Quick Start
 
@@ -32,13 +32,6 @@ npm run dev
 cd client
 npm run build
 ```
-
-## App Info
-
-### Author
-
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
 
 ### Version
 
