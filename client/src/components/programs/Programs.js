@@ -1,7 +1,10 @@
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getPrograms } from '../../actions/program';
 // import Program from './Program';
 import {
     Image,
@@ -14,11 +17,14 @@ import {
 } from 'semantic-ui-react'
 
 // const Programs = ({ getPrograms, programs: { programs, loading } }) => {
-//     useEffect(() => {
-//       getPrograms();
-//     }, [getPrograms]);
+const Programs = ({ getPrograms}) => {
 
-const Programs = () => {
+    useEffect(() => {
+      getPrograms();
+    }, [getPrograms]);
+
+// const Programs = () => {
+
     return (
         <div>
             <h1>PROGRAMS</h1>
@@ -30,4 +36,16 @@ const Programs = () => {
 
 };
 
-export default Programs
+Programs.propTypes = {
+    getPrograms: PropTypes.func.isRequired,
+    // program: PropTypes.object.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    program: state.program
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { getPrograms }
+  )(Programs);

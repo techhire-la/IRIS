@@ -144,6 +144,7 @@ router.get('/programs', auth, async (req, res) => {
   try {
     const programs = await Program.find().sort({ date: -1 });
     res.json(programs);
+    console.log("PROGRAMS: " + programs)
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
