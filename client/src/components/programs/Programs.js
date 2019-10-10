@@ -5,7 +5,7 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPrograms } from '../../actions/program';
-// import Program from './Program';
+import Program from './Program';
 import {
     Image,
     Item,
@@ -19,13 +19,14 @@ import {
 // const Programs = ({ getPrograms, programs: { programs, loading } }) => {
 const Programs = ({ getPrograms}) => {
 
+
     useEffect(() => {
       getPrograms();
     }, [getPrograms]);
 
 
-    console.log("Programs")
-    console.log(getPrograms)
+    // console.log("Programs")
+    // console.log(getPrograms)
 
 
     return (
@@ -46,7 +47,7 @@ Programs.propTypes = {
   
 
   const mapStateToProps = state => ({
-    program: state.program
+    programs: state.programs
   });
   
   export default connect(
