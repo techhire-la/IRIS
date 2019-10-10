@@ -9,9 +9,22 @@ const {check, validationResult} = require('express-validator/check')
 const Program = require('../../models/Program')
 const User = require('../../models/User');
 
-
+console.log("Programs route")
 // router.get('/test', (req, res) => res.send('Program Route'));
-
+// @route    GET api/posts
+// @desc     Get all posts
+// @access   Private
+router.get('/', auth, async (req, res) => {
+  try {
+    const programs = await Program.find().sort({ date: -1 });
+    console.log("PROGRAMS: " + programs)
+    res.json(programs);
+    
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 // @route    POST api/program
 // @desc     Create or update program
@@ -137,19 +150,7 @@ router.post('/addprogram',
   }
 )
 
-// @route    GET api/posts
-// @desc     Get all posts
-// @access   Private
-router.get('/programs', auth, async (req, res) => {
-  try {
-    const programs = await Program.find().sort({ date: -1 });
-    res.json(programs);
-    console.log("PROGRAMS: " + programs)
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-});
+
 
 
 // @route    Get api/program/:name

@@ -1,5 +1,4 @@
 import {
-    GET_PROGRAM,
     GET_PROGRAMS,
     PROGRAM_ERROR,
     CLEAR_PROGRAM,
@@ -13,17 +12,11 @@ import {
     error: {}
   };
   
+  console.log("in the program reducer")
   export default function(state = initialState, action) {
     const { type, payload } = action;
   
     switch (type) {
-    //   case GET_PROGRAM:
-    //   case UPDATE_PROGRAM:
-    //     return {
-    //       ...state,
-    //       program: payload,
-    //       loading: false
-    //     };
       case GET_PROGRAMS:
         return {
           ...state,
@@ -45,4 +38,4 @@ import {
       default:
         return state;
     }
-  }
+  };

@@ -12,7 +12,7 @@ import {
   } from './types';
   
 
-
+  console.log("in the program actions")
   // Get all programs
 export const getPrograms = () => async dispatch => {
     dispatch({ type: CLEAR_PROGRAM });

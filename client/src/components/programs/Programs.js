@@ -23,7 +23,10 @@ const Programs = ({ getPrograms}) => {
       getPrograms();
     }, [getPrograms]);
 
-// const Programs = () => {
+
+    console.log("Programs")
+    console.log(getPrograms)
+
 
     return (
         <div>
@@ -36,11 +39,12 @@ const Programs = ({ getPrograms}) => {
 
 };
 
+
 Programs.propTypes = {
     getPrograms: PropTypes.func.isRequired,
-    // program: PropTypes.object.isRequired
   };
   
+
   const mapStateToProps = state => ({
     program: state.program
   });
@@ -49,3 +53,5 @@ Programs.propTypes = {
     mapStateToProps,
     { getPrograms }
   )(Programs);
+
+      // program: PropTypes.object.isRequired
