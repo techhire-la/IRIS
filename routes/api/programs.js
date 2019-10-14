@@ -14,7 +14,7 @@ console.log("Programs route")
 // @route    GET api/posts
 // @desc     Get all posts
 // @access   Private
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const programs = await Program.find().sort({ date: -1 });
     console.log("PROGRAMS: " + programs)
